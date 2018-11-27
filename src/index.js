@@ -1,23 +1,11 @@
-import React from "react";
-import { View, StatusBar, StyleSheet } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <StatusBar
-        backgroundColor={"transparent"}
-        barStyle={"light-content"}
-        translucent
-      />
-    </View>
-  );
-};
+import MainContainer from "./containers/Main";
 
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "#00C08D",
-    flex: 1
+const AppNavigator = createStackNavigator({
+  Main: {
+    screen: MainContainer
   }
 });
+
+export default createAppContainer(AppNavigator);
